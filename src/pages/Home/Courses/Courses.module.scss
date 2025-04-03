@@ -4,18 +4,14 @@
     margin-top: 100px;
 }
 
-.courses__header {
-    width: 880px;
-}
-
-.courses__header_up {
-    font-size: 68px;
-}
-
-.courses__header_down {
-    font-size: 68px;
-    text-align: right;
+.courses__title {
+    display: flex;
+    flex-direction: column;
+    @include adaptiv-font(68,20);
     margin-bottom: 28px;
+}
+.courses__title_down {
+    margin-left: 1.75em;
 }
 
 .courses__descryption-container {

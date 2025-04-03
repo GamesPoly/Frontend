@@ -11,23 +11,24 @@
     justify-content: space-between;
     width: 356px;
     &--active {
-        border: 1px solid transparent;
-        background: var(--background-extra);
+        transition: all 0.2s ease;
+        border: 1px solid var(--primary-color);
+        background: rgba(255, 87, 49, 0.08);
     }
     &:hover {
         transition: all 0.2s ease;
-        border: 1px solid var(--text-secondary);
+        border: 1px solid var(--primary-color);
     }
 }
 
 .switcher-genres__text {
-    font-size: 26px;
+    
     line-height: 1;
-    font-weight: 500;
+    font-weight: 400;
     color: var(--text-primary);
 
     display: -webkit-box;
-    -webkit-line-clamp: 1;
+    line-clamp: 1;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -36,6 +37,7 @@
         transition: all 0.2s ease;
         opacity: 0.85;
     }
+    @include adaptiv-font(24, 16);
 }
 
 .switcher-genres__arrow {

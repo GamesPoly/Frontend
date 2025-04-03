@@ -38,14 +38,10 @@ const cards = [
 const Courses = () => {
     return (
         <section className={styles.courses}>
-            <div className={styles.courses__header}>
-                <h2 className={styles['courses__header_up']}>
-                    Подготовительные курсы
-                </h2>
-                <h2 className={styles['courses__header_down']}>
-                    в Московском Политехе
-                </h2>
-            </div>
+            <h2 className={styles.courses__title}>
+                <span className={styles.courses__title_up}>Подготовительные курсы</span>
+                <span className={styles.courses__title_down}>в Московском Политехе</span>
+            </h2>
             <div className={styles['courses__descryption-container']}>
                 <div
                     className={styles.courses__descryption}

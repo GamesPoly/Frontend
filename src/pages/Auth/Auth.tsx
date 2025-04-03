@@ -30,7 +30,7 @@ function Auth() {
 
     return (
         <main className={styles['auth__wrapper']}>
-            <h1>Войдите в свой аккаунт</h1>
+            <h1 className={styles['auth_title']}>Войдите в свой аккаунт</h1>
             <form
                 className={styles['auth__form']}
                 method="POST"

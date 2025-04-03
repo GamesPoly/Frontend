@@ -37,21 +37,21 @@ const CollectionBody = () => {
         // </div>
         <div className={styles.collection__body}>
             <div className={styles.collection__caption}>
-                <div className={styles.collection__boxCaption}>
-                    <div className={styles.collection__upCaption}>
+            <div className={styles.collection__boxCaption}>
+                <h2 className={styles.collection__title}>
+                    <span className={styles.collection__upCaption}>
                         <img
                             src={internet}
                             alt="Decorate Icon"
                             className={styles.collection__icon}
                         />
-                        <h2 className={styles.collection__title}>
-                            Цифровая платформа
-                        </h2>
-                    </div>
-                    <h2 className={styles.collection__title}>
+                        Цифровая платформа
+                    </span>
+                    <span className={styles.collection__downCaption}>
                         для игроков и разработчиков
-                    </h2>
-                </div>
+                    </span>
+                </h2>
+            </div>
                 <div className={styles.collection__downCaption}>
                     <p className={styles.collection__number}>
                         Откройте для себя удивительные игры, созданные нашими

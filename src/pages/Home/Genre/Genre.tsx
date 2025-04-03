@@ -6,15 +6,12 @@ const Genre = () => {
     return (
         <section id="genre" className={styles['genre']}>
             <div className={styles['genre__caption']}>
-                <div className={styles['genre__up-caption']}>
-                    <h2 className={styles['genre__title']}>Самые популярные</h2>
-                </div>
-                <div className={styles['genre__down-caption']}>
-                    <p className={styles['genre__number']}>03</p>
-                    <h2 className={styles['genre__title']}>
-                        игры разных жанров
-                    </h2>
-                </div>
+                <h2 className={styles['genre__title']}>
+                    <span className={styles['genre__up-caption']}>Популярные игры от студентов</span>
+                    <span className={styles['genre__down-caption']}>
+                        МосПолитеха по жанрам
+                    </span>
+                </h2>
             </div>
             <div className={styles['genre__body']}>
                 <ListGenres />

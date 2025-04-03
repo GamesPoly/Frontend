@@ -30,29 +30,24 @@
     justify-content: center;
 }
 
-.collection__up-caption {
-    display: flex;
-    //align-self: center;
-    gap: 25px;
-}
-
-.collection__down-caption {
-    display: flex;
-    //align-self: flex-start;
-    //gap: 25px;
-    //margin-left: 72px;
-}
 
 .collection__title {
+    display: flex;
+    flex-direction: column;
     white-space: nowrap;
-    font-size: 66px;
     font-weight: 500;
+    @include adaptiv-font(68, 20);
+}
+
+.collection__upCaption {
+    display: flex;
+    gap: 0.34em;
 }
 
 .collection__number {
-    font-size: 26px;
     font-weight: 400;
-    padding-top: 26px;
+    max-width: 400px;
+    @include adaptiv-font(24, 16);
 }
 
 .collection__desc {
@@ -77,4 +72,5 @@
     display: flex;
     flex-direction: column;
     gap: 16px;
+    @include adaptiv-font(24, 16);
 }

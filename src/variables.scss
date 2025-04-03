@@ -48,18 +48,6 @@ $gradient-l1: linear-gradient(
     #e58ea7 74.18%,
     #ff5731 100.8%
 );
-$maxWidth: 1440;
 @mixin adaptiv-font($pcSize, $mobSize) {
-    $addSize: $pcSize - $mobSize;
-    $addMobSize: $addSize + $addSize * 0.7;
-    @media (max-width: 767px) {
-        font-size: calc(
-            #{$mobSize + px} + #{$addMobSize} * ((100vw - 320px) / #{$maxWidth})
-        );
-    }
-    @media (min-width: 767px) {
-        font-size: calc(
-            #{$mobSize + px} + #{$addSize} * (100vw / #{$maxWidth})
-        );
-    }
+    font-size: clamp(#{$mobSize}px, #{$mobSize}px + (#{$pcSize} - #{$mobSize}) * ((100vw - 320px) / (1600 - 320)), #{$pcSize}px);
 }

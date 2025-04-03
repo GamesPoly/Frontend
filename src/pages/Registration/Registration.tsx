@@ -28,7 +28,7 @@ function Registration() {
 
     return (
         <main className={styles['registration__wrapper']}>
-            <h1>Регистрация в PolyGames</h1>
+            <h1 className={styles['registration__title']}>Регистрация в PolyGames</h1>
             <form className={styles['registration__form']} method="POST">
                 <div className={styles['registration__form-main']}>
                     <div className={styles['input__fields-block']}>

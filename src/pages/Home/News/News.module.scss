@@ -16,7 +16,7 @@
     display: flex;
 
     &__text {
-        font-size: 68px;
+        @include adaptiv-font(68,20);
         line-height: 25px;
         font-weight: 500;
     }

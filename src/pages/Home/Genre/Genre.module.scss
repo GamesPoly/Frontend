@@ -6,31 +6,17 @@
     display: flex;
     flex-direction: column;
 }
-
-.genre__up-caption {
-    display: flex;
-    gap: 25px;
-}
-
 .genre__down-caption {
-    display: flex;
-    align-self: flex-start;
-    gap: 25px;
-    margin-left: 72px;
+    margin-left: 1.75em;
 }
 
 .genre__title {
+    display: flex;
+    flex-direction: column;
     white-space: nowrap;
-    font-size: 68px;
+    @include adaptiv-font(68,20);
     font-weight: 500;
 }
-
-.genre__number {
-    font-size: 26px;
-    font-weight: 400;
-    padding-top: 26px;
-}
-
 .genre__body {
     margin-top: 40px;
     display: flex;
