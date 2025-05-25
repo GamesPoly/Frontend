@@ -10,12 +10,13 @@ import PostForm from '../pages/PostForm/PostForm'
 import PopularGames from '../pages/PopularGames/PopularGames'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Registration from '../pages/Registration/Registration'
-import MenuWindow from '@components/../shared/ui/MenuWindow/MenuWindow'
 import Footer from '@components/../widgets/ui/Footer/Footer'
 import NotFound from '../pages/NotFound/NotFound'
 import Game from '../pages/Game/Game'
 import AboutUs from '../pages/AboutUs/AboutUs'
 import { StudyProgram } from '../pages/StudyProgram/StudyProgram'
+import CoursesCatalog from '../pages/CoursesCatalog/CoursesCatalog'
+import Courses from '../pages/Home/Courses/Courses'
 
 const App = () => {
     const [showHeader, setShowHeader] = useState(true)
@@ -73,7 +74,8 @@ const App = () => {
                     <Route path="/popular-games" element={<PopularGames />} />
                     <Route path="/games/:id" element={<Game />} />
                     <Route path="/study-program" element={<StudyProgram />} />
-
+                    <Route path="/courses" element={<CoursesCatalog />} />
+                    <Route path="/test" element={<Courses />} />
                     <Route path="*" element={<NotFound />} />
                 </Routes>
                 <Footer />
