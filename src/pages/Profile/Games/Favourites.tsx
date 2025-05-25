@@ -8,6 +8,7 @@ import game11 from '../images/game11.png'
 import game12 from '../images/game12.png'
 import GameCard from './GameCard/GameCard'
 
+// Default test favorites to display if no user favorites are provided
 const testFavourites = [
     {
         src: game7,
@@ -41,7 +42,14 @@ const testFavourites = [
     }
 ]
 
-const Favourites = () =>{
+interface FavouritesProps {
+    favouriteGames?: any[];
+    noFavouritesMessage?: string;
+}
+
+const Favourites = ({ favouriteGames = [], noFavouritesMessage = "У вас пока нет избранных игр" }: FavouritesProps) => {
+    const games = favouriteGames.length > 0 ? favouriteGames : testFavourites;
+
     return (
         <section className={styles['games']}>
             <div className={styles['games__header']}>
@@ -49,9 +57,18 @@ const Favourites = () =>{
                 <button className={styles['games__btn']}>Показать все</button>
             </div>
             <div className={styles['games__cards']}>
-                {testFavourites.map((game) => (
-                    <GameCard src={game.src} title={game.title} desc={game.desc} />
-                ))}
+                {games.length > 0 ? (
+                    games.map((game, index) => (
+                        <GameCard 
+                            key={index}
+                            src={game.src} 
+                            title={game.title} 
+                            desc={game.desc} 
+                        />
+                    ))
+                ) : (
+                    <div className={styles['games__empty-message']}>{noFavouritesMessage}</div>
+                )}
             </div>
         </section>
     )

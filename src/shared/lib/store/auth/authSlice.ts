@@ -5,6 +5,13 @@ interface User {
     id: string
     name: string
     email: string
+    avatar?: string
+    status?: string
+    online?: boolean
+    favouriteGames?: any[]
+    userGames?: any[]
+    achievements?: any[]
+    activity?: number
 }
 
 interface AuthState {
@@ -45,6 +52,30 @@ export const loginUser = createAsyncThunk(
             return response.data
         } catch (error: any) {
             return rejectWithValue(error.response.data)
+        }
+    }
+)
+
+export const getCurrentUser = createAsyncThunk(
+    'auth/getCurrentUser',
+    async (_, { rejectWithValue }) => {
+        const token = localStorage.getItem('authToken')
+        if (!token) {
+            return rejectWithValue('No auth token found')
+        }
+
+        try {
+            const response = await axios.get(
+                'https://polygames-backend.onrender.com/api/users/me/',
+                {
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                    },
+                }
+            )
+            return response.data
+        } catch (error: any) {
+            return rejectWithValue(error.response?.data || 'Failed to fetch user data')
         }
     }
 )
@@ -122,6 +153,25 @@ const authSlice = createSlice({
                 (state: AuthState, action: PayloadAction<any>) => {
                     state.loading = false
                     state.error = action.payload || 'Register failed'
+                }
+            )
+            .addCase(getCurrentUser.pending, (state) => {
+                state.loading = true
+                state.error = null
+            })
+            .addCase(
+                getCurrentUser.fulfilled,
+                (state, action: PayloadAction<any>) => {
+                    state.loading = false
+                    state.user = action.payload.user || action.payload
+                    state.error = null
+                }
+            )
+            .addCase(
+                getCurrentUser.rejected,
+                (state, action: PayloadAction<any>) => {
+                    state.loading = false
+                    state.error = action.payload || 'Failed to fetch user data'
                 }
             )
     },

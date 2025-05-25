@@ -33,4 +33,13 @@
       gap: 24px;
     }
   }
+  
+  &__empty-message {
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    color: #949494;
+    @include adaptiv-font(18, 14);
+    font-style: italic;
+  }
 }

@@ -8,6 +8,7 @@ import game5 from "../images/game5.png"
 import game6 from "../images/game6.png"
 import GameCard from './GameCard/GameCard'
 
+// Default test games to display if no user games are provided
 const testGames = [
     {
         src: game1,
@@ -41,18 +42,34 @@ const testGames = [
     }
 ]
 
-const UserGames = () =>{
+interface UserGamesProps {
+    userGames?: any[];
+    noGamesMessage?: string;
+}
+
+const UserGames = ({ userGames = [], noGamesMessage = "У вас пока нет игр" }: UserGamesProps) => {
+    const games = userGames.length > 0 ? userGames : testGames;
+
     return (
         <section className={styles['games']}>
             <div className={styles['games__header']}>
                 <span className={styles['games__title']}>Мои игры</span>
                 <button className={styles['games__btn']}>Показать все</button>
             </div>
-           <div className={styles['games__cards']}>
-               {testGames.map((game) => (
-                   <GameCard src={game.src} title={game.title} desc={game.desc} />
-               ))}
-           </div>
+            <div className={styles['games__cards']}>
+                {games.length > 0 ? (
+                    games.map((game, index) => (
+                        <GameCard 
+                            key={index}
+                            src={game.src} 
+                            title={game.title} 
+                            desc={game.desc} 
+                        />
+                    ))
+                ) : (
+                    <div className={styles['games__empty-message']}>{noGamesMessage}</div>
+                )}
+            </div>
         </section>
     )
 }
