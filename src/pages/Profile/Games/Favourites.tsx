@@ -48,7 +48,7 @@ interface FavouritesProps {
 }
 
 const Favourites = ({ favouriteGames = [], noFavouritesMessage = "У вас пока нет избранных игр" }: FavouritesProps) => {
-    const games = favouriteGames.length > 0 ? favouriteGames : testFavourites;
+    const games = favouriteGames/* .length > 0 ? favouriteGames : testFavourites; */
 
     return (
         <section className={styles['games']}>

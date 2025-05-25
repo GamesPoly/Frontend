@@ -48,7 +48,7 @@ interface UserGamesProps {
 }
 
 const UserGames = ({ userGames = [], noGamesMessage = "У вас пока нет игр" }: UserGamesProps) => {
-    const games = userGames.length > 0 ? userGames : testGames;
+    const games = userGames/* .length > 0 ? userGames : testGames; */
 
     return (
         <section className={styles['games']}>

@@ -11,7 +11,7 @@ const ForDevelopers = () => {
                 шанс поделиться своими игровыми мирами с нашим сообществом -
                 загружайте свои игры.
             </p>
-            <ArrowLink to="/teams" />
+            <ArrowLink to="/post-form" />
         </div>
     )
 }

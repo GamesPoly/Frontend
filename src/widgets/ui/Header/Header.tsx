@@ -38,8 +38,8 @@ const Header: React.FC<HeaderProps> = ({ showHeader }) => {
                     </Link>
                 </div>
                 <div className={styles.header__nav}>
-                    <Link className={styles.header__nav__link} to="/news">
-                        Новости
+                    <Link className={styles.header__nav__link} to="/post-form">
+                        Опубликовать
                     </Link>
                     <Link className={styles.header__nav__link} to="/games">
                         Каталог игр
@@ -100,11 +100,11 @@ const Header: React.FC<HeaderProps> = ({ showHeader }) => {
                         НАВИГАЦИЯ ПО САЙТУ
                     </p>
                     <Link
-                        to="/news"
+                        to="/post-form"
                         className={styles['header__mobile-menu-link']}
                         onClick={toggleMenu}
                     >
-                        Новости
+                        Опубликовать
                     </Link>
                     <Link
                         to="/games"

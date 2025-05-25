@@ -84,7 +84,7 @@ function TeamsPage() {
                         <h1>Будьте первыми!</h1>
                     </div>
                 </div>
-                <ArrowLink to="/" className={styles['arrow-link']} />
+                <ArrowLink to="/post-form" className={styles['arrow-link']} />
             </div>
         </main>
     )

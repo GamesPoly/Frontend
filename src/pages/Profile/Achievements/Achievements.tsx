@@ -8,27 +8,11 @@ import swords from "../images/swords.svg"
 const testAchievments = [
     {
         src: cup,
-        text:"Лучший разработчик",
+        text:"Отличный старт",
     },
     {
         src: swords,
-        text:"Лучший стратег",
-    },
-    {
-        src: cup,
-        text:"Лучший разработчик",
-    },
-    {
-        src: cup,
-        text:"Лучший разработчик",
-    },
-    {
-        src: swords,
-        text:"Лучший стратег",
-    },
-    {
-        src: cup,
-        text:"Лучший разработчик",
+        text:"Мысли смелее!",
     }
 ]
 

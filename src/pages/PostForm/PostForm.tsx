@@ -1,8 +1,9 @@
-import React, { useState, ChangeEvent } from 'react'
+import React, { useState, ChangeEvent, useEffect } from 'react'
 import styles from './PostForm.module.scss'
 import { Sidebar } from './AsideMenu/Sidebar'
 import { FileInputArea } from './components/FileInputArea'
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 
 interface Platforms {
     windows: boolean
@@ -30,6 +31,15 @@ interface SidebarProps {
 }
 
 function PostForm() {
+    const navigate = useNavigate()
+    useEffect(() => {
+        const token = localStorage.getItem('authToken')
+        if (!token) {
+            navigate('/auth')
+            return
+        }
+    }, [navigate])
+
     const handleSubmit = () => {
         const data = {
             name: title,
