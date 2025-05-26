@@ -368,7 +368,7 @@ function CatalogGamesContent() {
 
             const formattedData: GamesListData = {
                 title: `Лучшие представители ${selectedGenre === 'all' ? 'всех жанров' : `жанра ${selectedGenre}`}${selectedSet === 'all' ? '' : `, набор ${selectedSet}`}`,
-                games: DATA.games,
+                games: DATA.games.slice(5,),
             }
 
             setGamesList([formattedData])

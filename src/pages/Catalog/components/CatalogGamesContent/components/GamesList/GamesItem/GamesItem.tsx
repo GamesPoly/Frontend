@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import styles from './GamesItem.module.scss'
 import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 
 type GamesItemProps = Partial<{
@@ -25,7 +25,9 @@ function GamesItem({ name, desc, imageUrl }: GamesItemProps) {
     // };
 
     return (
-        <li className={styles['list__card']}>
+        <li>
+            <Link to={'/games/1'} className={styles['list__card']}>
+            
             <div
                 // onClick={() => openCard({ name: name, desc: desc, imageUrl: imageUrl })}
                 className={styles['card__content']}
@@ -49,6 +51,7 @@ function GamesItem({ name, desc, imageUrl }: GamesItemProps) {
                     </p>
                 </div>
             </div>
+            </Link>
         </li>
     )
 }
