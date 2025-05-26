@@ -30,21 +30,13 @@ function Profile() {
 
     // Create a default user object with fallback values
     const currentUser = {
-        name: user?.name || 'Пользователь',
+        name: user?.name || 'OlegSm31',
         avatar: user?.avatar || userPhoto,
         online: user?.online !== undefined ? user.online : true,
         status: user?.status || 'Статус не указан',
         activity: user?.activity || 0,
     }
-
-    if (loading) {
-        return (
-            <div className={styles['profile__wrapper']}>
-                <div className={styles['loading']}>Загрузка профиля...</div>
-            </div>
-        )
-    }
-
+    
     return (
         <main
             style={{ backgroundImage: `url(${bg})` }}
