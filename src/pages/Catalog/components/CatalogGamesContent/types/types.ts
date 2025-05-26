@@ -1,6 +1,6 @@
 export type Game = {
     id: string
-    image: string
+    imageUrl: string
     name: string
     desc: string
     ganre: string

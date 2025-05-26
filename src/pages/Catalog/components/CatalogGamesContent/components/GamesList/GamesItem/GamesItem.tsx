@@ -12,6 +12,7 @@ type GamesItemProps = Partial<{
 }>
 function GamesItem({ name, desc, imageUrl }: GamesItemProps) {
     const [isLoaded, setIsLoaded] = useState<boolean>(false)
+    const [isError, setIsError] = useState<boolean>(false)
     // const navigate = useNavigate();
     // const dispatch = useDispatch();
 
@@ -29,13 +30,14 @@ function GamesItem({ name, desc, imageUrl }: GamesItemProps) {
                 // onClick={() => openCard({ name: name, desc: desc, imageUrl: imageUrl })}
                 className={styles['card__content']}
             >
-                {!isLoaded && <Skeleton className={styles['card__cover']} />}
+                {(!isLoaded || isError) && <Skeleton className={styles['card__cover']} />}
                 <img
                     src={imageUrl}
                     alt={name}
                     className={styles['card__cover']}
                     onLoad={() => setIsLoaded(true)}
-                    style={{ display: isLoaded ? 'block' : 'none' }}
+                    onError={() => setIsError(true)}
+                    style={{ display: isLoaded || !isError  ? 'block' : 'none' }}
                 />
 
                 <div className={styles['card__text']}>

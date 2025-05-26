@@ -11,9 +11,9 @@ type AdBannerProps = {
 const AdBanner: React.FC<AdBannerProps> = ({ gameAdObj }) => {
     return (
         <div className={styles['ad-banner']}>
-            {gameAdObj.image && (
+            {gameAdObj.imageUrl && (
                 <img
-                    src={gameAdObj.image}
+                    src={gameAdObj.imageUrl}
                     alt={gameAdObj.name}
                     className={styles['ad-banner__image']}
                 />

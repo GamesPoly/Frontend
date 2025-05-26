@@ -15,7 +15,7 @@ function AdBand({ gameAdObj }: AdBandProps) {
         <Link to={`/games/${gameAdObj.id}`} className={styles['ad-band']}>
             {!isLoaded && <Skeleton className={styles['ad-band__cover']} />}
             <img
-                src={gameAdObj.image}
+                src={gameAdObj.imageUrl}
                 alt={gameAdObj.name}
                 onLoad={() => setIsLoaded(true)}
                 style={{ display: isLoaded ? 'block' : 'none' }}

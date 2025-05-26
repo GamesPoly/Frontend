@@ -16,18 +16,7 @@ function GamesList({ title, games }: GamesListProps) {
                     {title ? (
                         <div className={styles['list__head']}>
                             <h3 className={styles['games__header']}>{title}</h3>
-                            <Link
-                                to="/"
-                                className={styles['games__show']}
-                                style={{
-                                    display:
-                                        selectedGenre === selectedSet
-                                            ? 'block'
-                                            : 'none',
-                                }} /* Выполнятья только в одном случает: оба === "all" */
-                            >
-                                Показать все
-                            </Link>
+
                         </div>
                     ) : null}
                     <ul className={styles['list__body']}>
@@ -35,7 +24,7 @@ function GamesList({ title, games }: GamesListProps) {
                             <GamesItem
                                 name={game.name}
                                 desc={game.desc}
-                                imageUrl={game.image}
+                                imageUrl={game.imageUrl}
                                 key={game.id}
                             />
                         ))}
